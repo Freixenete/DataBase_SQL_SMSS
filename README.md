@@ -5,19 +5,19 @@ Data base first touch with SQL SMSS(SQL Management Server Studio)
 
 
 create table professors ( <br>
-	inicials varchar(5) not null, <br>
-	dni varchar(9) not null, <br>
-	nom varchar(205) not null, <br>
-	email varchar(259) not null, <br>
-	data_naixemant date null, <br>
-	constraint professors_pk <br>
-		primary key (inicials), <br>
-	constraint dni_ak <br>
-		unique (dni), <br>
-	constraint email <br>
-		unique (email), <br>
-	constraint nom_ak <br>
-		unique (nom) <br>
+&nbsp 	inicials varchar(5) not null, <br>
+&nbsp 	dni varchar(9) not null, <br>
+&nbsp 	nom varchar(205) not null, <br>
+&nbsp 	email varchar(259) not null, <br>
+&nbsp 	data_naixemant date null, <br>
+&nbsp 	constraint professors_pk <br>
+&ensp		primary key (inicials), <br>
+&nbsp 	constraint dni_ak <br>
+&ensp		unique (dni), <br>
+&nbsp 	constraint email <br>
+&ensp		unique (email), <br>
+&nbsp 	constraint nom_ak <br>
+&ensp		unique (nom) <br>
 );
 
 Ex from "https://github.com/ctrl-alt-d/BaseDeDades/blob/main/AEA2/MR/traduccio-del-model-entitat-relacio-al-model-relacional.md"
@@ -28,23 +28,23 @@ Ex from "https://github.com/ctrl-alt-d/BaseDeDades/blob/main/AEA2/MR/traduccio-d
 ## 2. Two entities with connectors
 
 create table piscinas ( <br>
-	codigo varchar(4) not null, <br>
-	poblacion varchar(250), <br>
-	m3 int not null, <br>
-	constraint piscinas_pk <br>
-		primary key (codigo) <br>
+&nbsp 	codigo varchar(4) not null, <br>
+&nbsp 	poblacion varchar(250), <br>
+&nbsp 	m3 int not null, <br>
+&nbsp 	constraint piscinas_pk <br>
+&ensp		primary key (codigo) <br>
 )
 
 create table tratamiento( <br>
-	codigo_piscina varchar(4) not null, <br>
-	data_hora datetime not null, <br>
-	codi_tecnic varchar(2) not null, <br>
-	explicacion_tratamiento text, <br>
-	constraint tratamiento_pk <br>
-		primary key (data_hora, codi_tecnic), <br>
-	constraint tratamiento_a_piscina_fk <br>
-		foreign key (codigo_piscina) <br>
-		references piscinas (codigo) <br>
+&nbsp 	codigo_piscina varchar(4) not null, <br>
+&nbsp 	data_hora datetime not null, <br>
+&nbsp 	codi_tecnic varchar(2) not null, <br>
+&nbsp 	explicacion_tratamiento text, <br>
+&nbsp 	constraint tratamiento_pk <br>
+&ensp		primary key (data_hora, codi_tecnic), <br>
+&nbsp 	constraint tratamiento_a_piscina_fk <br>
+&ensp		foreign key (codigo_piscina) <br>
+&ensp		references piscinas (codigo) <br>
 )
 
 Ex from "https://github.com/ctrl-alt-d/BaseDeDades/blob/main/AEA2/MR/traduccio-del-model-entitat-relacio-al-model-relacional.md"
