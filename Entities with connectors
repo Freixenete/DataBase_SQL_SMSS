@@ -1,0 +1,21 @@
+2. Two entities with connectors
+
+create table piscinas (
+	codigo varchar(4) not null,
+	poblacion varchar(250),
+	m3 int not null,
+	constraint piscinas_pk
+		primary key (codigo)
+)
+
+create table tratamiento(
+	codigo_piscina varchar(4) not null,
+	data_hora datetime not null,
+	codi_tecnic varchar(2) not null,
+	explicacion_tratamiento text,
+	constraint tratamiento_pk
+		primary key (data_hora, codi_tecnic),
+	constraint tratamiento_a_piscina_fk
+		foreign key (codigo_piscina)
+		references piscinas (codigo)
+)
