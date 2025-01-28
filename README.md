@@ -5,7 +5,7 @@ Data base first touch with SQL SMSS(SQL Management Server Studio)
 
 
 create table professors ( <br>
- 	inicials varchar(5) not null, <br>
+        inicials varchar(5) not null, <br>
  	dni varchar(9) not null, <br>
  	nom varchar(205) not null, <br>
  	email varchar(259) not null, <br>
