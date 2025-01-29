@@ -1,3 +1,5 @@
+2.1. Entities with connectors
+
 DROP TABLE medicos;
 DROP TABLE visita;
 
