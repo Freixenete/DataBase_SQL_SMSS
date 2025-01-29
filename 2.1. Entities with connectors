@@ -1,0 +1,23 @@
+DROP TABLE medicos;
+DROP TABLE visita;
+
+
+create table medicos (
+	num_colegiado varchar(50) not null,
+	nombre varchar(250) not null,
+	constraint medicos_pk
+		primary key (num_colegiado)
+);
+
+
+create table visita (
+	momento datetime not null,
+	nombre_paciente varchar (250) not null,
+	duracion_minutos int not null,
+	num_colegiado varchar(50) not null,
+	constraint visita_pk
+		primary key(momento, num_colegiado),
+	constraint visita_a_medico_fk
+		foreign key (num_colegiado)
+		references medicos(num_colegiado)
+);
