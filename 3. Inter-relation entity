@@ -1,0 +1,38 @@
+3. Inter-relation entity
+
+create table professor (
+	iniciales varchar(5) not null,
+	dni varchar(9) not null,
+	nombre varchar(205) not null,
+	email varchar(259) not null,
+	constraint professors_pk
+		primary key (iniciales)
+);
+
+create table grupo(
+	nivel varchar(4) not null,
+	curso int not null,
+	letra char(1) not null,
+	aula varchar(10) null,
+	constraint grupo_pk
+		primary key(nivel, curso, letra)
+);
+
+create table docencia(
+	iniciales varchar(5) not null,
+	nivel varchar(4) not null,
+	curso int not null,
+	letra char(1) not null,
+	dia_semana char(2) not null,
+	horas_docencia int not null,
+	constraint docencia_pk
+		primary key (iniciales, nivel, curso, letra, dia_semana),
+	constraint docencia_a_profesor_fk
+		foreign key (iniciales)
+		references professor (iniciales),
+	constraint docencia_a_grupo_fk
+		foreign key (nivel, curso, letra)
+		references grupo (nivel, curso, letra)
+);
+
+Ex from: https://github.com/ctrl-alt-d/BaseDeDades/blob/main/AEA2/MER/entitat-inter-relacio-exercicis-dependencia-didentificacio-ii/readme.md
