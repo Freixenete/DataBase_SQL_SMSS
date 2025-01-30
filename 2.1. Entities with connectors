@@ -1,5 +1,7 @@
 2.1. Entities with connectors
 
+```sql
+
 DROP TABLE medicos;
 DROP TABLE visita;
 
