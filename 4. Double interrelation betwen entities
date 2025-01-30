@@ -1,0 +1,28 @@
+4. Double interrelation betwen entities
+
+create table trabajador (
+	[NSS] varchar(12) not null,
+	nombre varchar(250) not null,
+	especialidad varchar(50) not null,
+	data_nacimiento date null,
+	constraint trabajador_pk
+		primary key ([NSS])
+);
+
+create table llamada(
+	data_hora datetime not null,
+	telefono_origen int not null,
+	descripcion_incidencia text not null,
+	nss_trabajador varchar(12) not null,
+	nss_especialista varchar(12) null,
+	constraint llamada_pk
+		primary key (data_hora, telefono_origen),
+	constraint llamada_diagnosticador_fk
+		foreign key(nss_trabajador)
+		references trabajador ([NSS]),
+	constraint llamada_especialista_fk
+		foreign key(nss_especialista)
+		references trabajador ([NSS])
+);
+
+Ex 4 from: https://github.com/ctrl-alt-d/BaseDeDades/blob/main/AEA2/MR/traduccio-del-model-entitat-relacio-al-model-relacional.md
