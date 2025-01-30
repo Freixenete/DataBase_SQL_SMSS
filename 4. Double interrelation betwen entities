@@ -1,5 +1,7 @@
 4. Double interrelation betwen entities
 
+```sql
+
 create table trabajador (
 	[NSS] varchar(12) not null,
 	nombre varchar(250) not null,
