@@ -1,5 +1,6 @@
 1. One entity
 
+```sql
 
 create table professors (
 	inicials varchar(5) not null,
