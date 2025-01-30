@@ -1,5 +1,7 @@
 2. Two entities with connectors
 
+```sql
+
 create table piscinas (
 	codigo varchar(4) not null,
 	poblacion varchar(250),
