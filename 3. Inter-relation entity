@@ -1,5 +1,7 @@
 3. Inter-relation entity
 
+```sql
+
 create table professor (
 	iniciales varchar(5) not null,
 	dni varchar(9) not null,
